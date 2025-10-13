@@ -25,6 +25,26 @@ npm start
 
 By default the server exposes both HTTP and HTTPS endpoints on ports 80 and 443 respectively. Visit <http://localhost> or <https://localhost> to view the splash page.
 
+### Running with a Let's Encrypt certificate
+
+If you have already issued a certificate with Certbot (for example under `/etc/letsencrypt/live/alfe.sh/`), use the provided helper script to start SplashWebapp with the production key and certificate on the standard HTTP/HTTPS ports:
+
+```bash
+./run_with_cert.sh
+```
+
+The script defaults to the `alfe.sh` certificate directory but you can supply an alternate domain as the first argument, or override any of the exported environment variables:
+
+```bash
+# Use a different domain folder under /etc/letsencrypt/live
+./run_with_cert.sh example.com
+
+# Override individual settings
+HOST=127.0.0.1 HTTP_PORT=8080 HTTPS_PORT=8443 ./run_with_cert.sh example.com
+```
+
+`run_with_cert.sh` verifies that the expected certificate files exist before launching the server and automatically wires the correct environment variables (`HTTPS_KEY_PATH`, `HTTPS_CERT_PATH`, and optional `HTTPS_CA_PATH`).
+
 ## Environment variables
 
 The server can be configured with the following environment variables:
