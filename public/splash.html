@@ -370,26 +370,11 @@
   <script src="/session.js"></script>
   <script>
     const auroraRedirectUrl = 'https://mvp2.alfe.sh/aurora.html';
-    const auroraRedirectCookie = 'splashAutoRedirect';
-
-    function shouldAutoRedirectToAurora() {
-      return getCookie(auroraRedirectCookie) === 'true';
-    }
-
-    function rememberAuroraRedirectPreference() {
-      setCookie(auroraRedirectCookie, 'true');
-    }
 
     document.addEventListener('DOMContentLoaded', () => {
-      if (shouldAutoRedirectToAurora()) {
-        window.location.replace(auroraRedirectUrl);
-        return;
-      }
-
       const startDialogGif = document.getElementById('startDialogGif');
       if (startDialogGif) {
         startDialogGif.addEventListener('click', () => {
-          rememberAuroraRedirectPreference();
           window.location.href = auroraRedirectUrl;
         });
       }
@@ -397,7 +382,6 @@
       const chatButton = document.querySelector('#startTypeButtons [data-type="chat"]');
       if (chatButton) {
         chatButton.addEventListener('click', () => {
-          rememberAuroraRedirectPreference();
           window.location.href = auroraRedirectUrl;
         });
       }
