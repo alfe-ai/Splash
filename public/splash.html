@@ -222,10 +222,6 @@
         font-size: clamp(1.2rem, 5.5vw, 1.5rem);
       }
 
-      #startDialogGif {
-        max-height: clamp(160px, 52vh, 360px);
-      }
-
       #startDialog .modal-content {
         gap: clamp(0.2rem, 1vh, 0.6rem);
       }
@@ -274,12 +270,6 @@
         >
           Secure, Open-source AI Workspace
         </p>
-        <img
-          id="startDialogGif"
-          src="/demo2.gif"
-          alt="Alfe AI demo"
-          style="max-width:960px; width:100%; height:auto; max-height:clamp(180px, 60vh, 480px); object-fit:contain; cursor:pointer;"
-        />
       </div>
       <h3>Get Started</h3>
       <div>
@@ -369,20 +359,13 @@
   </div>
   <script src="/session.js"></script>
   <script>
-    const auroraRedirectUrl = 'https://mvp2.alfe.sh/aurora.html';
+    const chatRedirectUrl = 'https://app.alfe.sh/new';
 
     document.addEventListener('DOMContentLoaded', () => {
-      const startDialogGif = document.getElementById('startDialogGif');
-      if (startDialogGif) {
-        startDialogGif.addEventListener('click', () => {
-          window.location.href = auroraRedirectUrl;
-        });
-      }
-
       const chatButton = document.querySelector('#startTypeButtons [data-type="chat"]');
       if (chatButton) {
         chatButton.addEventListener('click', () => {
-          window.location.href = auroraRedirectUrl;
+          window.location.href = chatRedirectUrl;
         });
       }
 
