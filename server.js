@@ -12,6 +12,19 @@ const __dirname = path.dirname(__filename);
 const app = express();
 const publicDir = path.join(__dirname, 'public');
 
+app.use((req, res, next) => {
+  if (req.secure || req.headers['x-forwarded-proto'] === 'https') {
+    return next();
+  }
+
+  const host = (req.headers.host || '').replace(/:\d+$/, '');
+  if (host === 'alfe.sh') {
+    return res.redirect(301, `https://alfe.sh${req.originalUrl}`);
+  }
+
+  return next();
+});
+
 app.use(express.static(publicDir));
 
 app.get('/', (_req, res) => {
