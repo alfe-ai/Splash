@@ -28,7 +28,7 @@ app.use((req, res, next) => {
 app.use(express.static(publicDir));
 
 app.get('/', (_req, res) => {
-  res.redirect(302, 'https://app.alfe.sh/new');
+  res.sendFile(path.join(publicDir, 'splash.html'));
 });
 
 function resolvePort(value, fallback) {
