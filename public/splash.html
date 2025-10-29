@@ -163,6 +163,31 @@
       color: inherit;
     }
 
+    #startDialog #startTypeButtons .start-type-btn.disabled[data-type="task"],
+    #newTabModal #newTabTypeButtons .start-type-btn.disabled[data-type="task"] {
+      position: relative;
+      cursor: not-allowed;
+    }
+
+    #startDialog #startTypeButtons .start-type-btn.disabled[data-type="task"]::after,
+    #newTabModal #newTabTypeButtons .start-type-btn.disabled[data-type="task"]::after {
+      content: 'Soon';
+      position: absolute;
+      top: 42%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(-12deg);
+      background: var(--accent);
+      color: #fff;
+      padding: 2px 8px;
+      border-radius: 999px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      pointer-events: none;
+      box-shadow: 0 0 6px rgba(0, 0, 0, 0.35);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
     #startDialog #startTypeButtons .start-type-btn .icon,
     #newTabModal #newTabTypeButtons .start-type-btn .icon {
       font-size: clamp(1.1rem, 4vw, 1.3rem);
