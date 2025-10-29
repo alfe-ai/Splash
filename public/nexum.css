@@ -413,20 +413,6 @@ button:hover {
   pointer-events: none;
 }
 
-.start-type-btn.disabled::after {
-  content: 'Soon';
-  position: absolute;
-  top: 28%;
-  left: 50%;
-  transform: translate(-50%, -50%) rotate(-20deg);
-  background: var(--accent);
-  color: #fff;
-  padding: 2px 6px;
-  border-radius: 8px;
-  font-size: 0.8rem;
-  pointer-events: none;
-}
-
 /* New Tab dialog type buttons */
 #newTabTypeButtons {
   display: flex;

@@ -159,6 +159,8 @@
       text-align: center;
       gap: 4px;
       height: auto;
+      text-decoration: none;
+      color: inherit;
     }
 
     #startDialog #startTypeButtons .start-type-btn .icon,
@@ -302,18 +304,17 @@
               Self-Host Now
             </a>
           </div>
-          <div data-type="code" class="start-type-btn disabled" role="button" aria-disabled="true" tabindex="-1">
+          <a
+            data-type="code"
+            class="start-type-btn"
+            href="https://github.com/alfe-ai/Sterling"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <div class="icon">💻</div>
             <div>Code</div>
-            <a
-              class="self-hosting-cta"
-              href="https://github.com/alfe-ai/Sterling_MIT"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              On GitHub
-            </a>
-          </div>
+            <span class="self-hosting-cta">On GitHub</span>
+          </a>
           <button data-type="task" class="start-type-btn disabled" disabled>
             <div class="icon">📋</div>
             <div>Project</div>
