@@ -164,13 +164,21 @@
     }
 
     #startDialog #startTypeButtons .start-type-btn.disabled[data-type="task"],
-    #newTabModal #newTabTypeButtons .start-type-btn.disabled[data-type="task"] {
+    #startDialog #startTypeButtons .start-type-btn.disabled[data-type="search"],
+    #startDialog #startTypeButtons .start-type-btn.disabled[data-type="design"],
+    #newTabModal #newTabTypeButtons .start-type-btn.disabled[data-type="task"],
+    #newTabModal #newTabTypeButtons .start-type-btn.disabled[data-type="search"],
+    #newTabModal #newTabTypeButtons .start-type-btn.disabled[data-type="design"] {
       position: relative;
       cursor: not-allowed;
     }
 
     #startDialog #startTypeButtons .start-type-btn.disabled[data-type="task"]::after,
-    #newTabModal #newTabTypeButtons .start-type-btn.disabled[data-type="task"]::after {
+    #startDialog #startTypeButtons .start-type-btn.disabled[data-type="search"]::after,
+    #startDialog #startTypeButtons .start-type-btn.disabled[data-type="design"]::after,
+    #newTabModal #newTabTypeButtons .start-type-btn.disabled[data-type="task"]::after,
+    #newTabModal #newTabTypeButtons .start-type-btn.disabled[data-type="search"]::after,
+    #newTabModal #newTabTypeButtons .start-type-btn.disabled[data-type="design"]::after {
       content: 'Soon';
       position: absolute;
       top: 42%;
@@ -198,11 +206,6 @@
     #newTabModal #newTabTypeButtons .start-type-btn.disabled {
       pointer-events: none;
       opacity: 0.65;
-    }
-
-    #startDialog #startTypeButtons .start-type-btn.disabled .self-hosting-cta,
-    #newTabModal #newTabTypeButtons .start-type-btn.disabled .self-hosting-cta {
-      pointer-events: auto;
     }
 
     .self-hosting-cta {
@@ -308,26 +311,10 @@
           <div data-type="search" class="start-type-btn disabled" role="button" aria-disabled="true" tabindex="-1">
             <div class="icon">🌐</div>
             <div>Search</div>
-            <a
-              class="self-hosting-cta"
-              href="https://github.com/alfe-ai/alfe-ai-2.0_beta"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Self-Host Now
-            </a>
           </div>
           <div data-type="design" class="start-type-btn disabled" role="button" aria-disabled="true" tabindex="-1">
             <div class="icon">🎨</div>
             <div>Design</div>
-            <a
-              class="self-hosting-cta"
-              href="https://github.com/alfe-ai/alfe-ai-2.0_beta"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Self-Host Now
-            </a>
           </div>
           <a
             data-type="code"
@@ -394,11 +381,6 @@
         });
       }
 
-      document.querySelectorAll('.self-hosting-cta').forEach((link) => {
-        link.addEventListener('click', (event) => {
-          event.stopPropagation();
-        });
-      });
     });
   </script>
 </body>
