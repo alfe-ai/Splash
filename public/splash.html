@@ -164,13 +164,21 @@
     }
 
     #startDialog #startTypeButtons .start-type-btn.disabled[data-type="task"],
-    #newTabModal #newTabTypeButtons .start-type-btn.disabled[data-type="task"] {
+    #startDialog #startTypeButtons .start-type-btn.disabled[data-type="search"],
+    #startDialog #startTypeButtons .start-type-btn.disabled[data-type="design"],
+    #newTabModal #newTabTypeButtons .start-type-btn.disabled[data-type="task"],
+    #newTabModal #newTabTypeButtons .start-type-btn.disabled[data-type="search"],
+    #newTabModal #newTabTypeButtons .start-type-btn.disabled[data-type="design"] {
       position: relative;
       cursor: not-allowed;
     }
 
     #startDialog #startTypeButtons .start-type-btn.disabled[data-type="task"]::after,
-    #newTabModal #newTabTypeButtons .start-type-btn.disabled[data-type="task"]::after {
+    #startDialog #startTypeButtons .start-type-btn.disabled[data-type="search"]::after,
+    #startDialog #startTypeButtons .start-type-btn.disabled[data-type="design"]::after,
+    #newTabModal #newTabTypeButtons .start-type-btn.disabled[data-type="task"]::after,
+    #newTabModal #newTabTypeButtons .start-type-btn.disabled[data-type="search"]::after,
+    #newTabModal #newTabTypeButtons .start-type-btn.disabled[data-type="design"]::after {
       content: 'Soon';
       position: absolute;
       top: 42%;

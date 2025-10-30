@@ -413,6 +413,26 @@ button:hover {
   pointer-events: none;
 }
 
+.start-type-btn.disabled[data-type="task"]::after,
+.start-type-btn.disabled[data-type="search"]::after,
+.start-type-btn.disabled[data-type="design"]::after {
+  content: "Soon";
+  position: absolute;
+  top: 42%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-12deg);
+  background: var(--accent);
+  color: #fff;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  pointer-events: none;
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.35);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
 /* New Tab dialog type buttons */
 #newTabTypeButtons {
   display: flex;
