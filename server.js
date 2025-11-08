@@ -25,6 +25,10 @@ app.use((req, res, next) => {
   return next();
 });
 
+app.get('/beta', (_req, res) => {
+  res.redirect(302, '/');
+});
+
 app.use(express.static(publicDir));
 
 app.get('/', (_req, res) => {
