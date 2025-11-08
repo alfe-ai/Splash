@@ -32,7 +32,7 @@ app.get('/beta', (_req, res) => {
 app.use(express.static(publicDir));
 
 app.get('/', (_req, res) => {
-  res.sendFile(path.join(publicDir, 'splash.html'));
+  res.redirect(302, 'https://app.alfe.sh');
 });
 
 function resolvePort(value, fallback) {
